@@ -3,15 +3,14 @@ var expect = chai.expect;
 var assert_chai = chai.assert;
 var ABI = require('../src/ABI');
 // var assert = require('assert');
+const contractADDR = '';
 
 
 describe("ABI TEST", function () {
 
     it("Returns an array which has a length between 2 and 50", function () {
-        const contractADDR = '0x2421fa37d78911408B456503c2333611178B04C1';
         const fetchABI_url = 'http://ropsten.etherscan.io/api?module=contract&action=getabi&address=' + contractADDR;
         this.timeout(10000);
-        // var callback = {constant:false,inputs:[ [Object],[Object],[Object] ],name:'__callback',outputs:[],payable:true,stateMutability:'payable',type:'function'};
 
         ABI.fetch(fetchABI_url)
             .then(function (result) {
@@ -25,10 +24,8 @@ describe("ABI TEST", function () {
     });
 
     it("Checks whether ABI has a callback function or not and whether that function is payable or not", function () {
-        const contractADDR = '0x2421fa37d78911408B456503c2333611178B04C1';
         const fetchABI_url = 'http://ropsten.etherscan.io/api?module=contract&action=getabi&address=' + contractADDR;
         this.timeout(10000);
-        // var callback = {constant:false,inputs:[ [Object],[Object],[Object] ],name:'__callback',outputs:[],payable:true,stateMutability:'payable',type:'function'};
 
         ABI.fetch(fetchABI_url)
             .then(function (result) {

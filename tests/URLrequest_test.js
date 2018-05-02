@@ -7,7 +7,6 @@ var url = require('../src/url_filter');
 describe("URL request test", function () {
 
     it("URL JSON request is not null and is a string", function (done) {
-        // var str1 = "json(http://api.kraken.com/0/public/Ticker?pair=ETHXBT).result.XETHXXBT.c[0]";
         var _url = "http://api.kraken.com/0/public/Ticker?pair=ETHXBT";
         var params = ".result.XETHXXBT.c[0]";
         this.timeout(10000);
@@ -19,7 +18,6 @@ describe("URL request test", function () {
     });
 
     it("URL XML request is not null and is a string", function (done) {
-        // var str1 = "xml(https://www.fueleconomy.gov/ws/rest/fuelprices).fuelPrices.diesel";
         var _url = "https://www.fueleconomy.gov/ws/rest/fuelprices";
         var params = ".fuelPrices.diesel";
         this.timeout(10000);

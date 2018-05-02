@@ -30,11 +30,6 @@ describe("URL parameters test", function () {
         var str1 = "json(https://api.kraken.com/0/public/Ticker?pair=ETHXBT).result.XETHXXBT.c[0]";
         var test_params = str1.split(')')[1];
         var params = url._filterPARAMS(str1);
-        /*for(var i=0;i<=params.length-1;i++){
-            expect(params[i]).to.equal(test_params[i])
-        }*/
-        // expect(params).to.deep.equal(test_params);
-        // expect(params).to.eql(test_params);
         assert.deepEqual(params,test_params)
     })
 });

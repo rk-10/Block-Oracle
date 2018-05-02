@@ -3,6 +3,7 @@ var expect = chai.expect;
 // var assert_chai = chai.assert;
 var TLSnotary = require('../src/tlsnotary');
 // var assert = require('assert');
+var tlsPath = require('../config').tlsPath;
 
 
 describe("TLS NOTARY TESTS", function () {
@@ -23,7 +24,7 @@ describe("TLS NOTARY TESTS", function () {
         TLSnotary.Notarize(url)
             .then(function (result) {
                 expect(result).to.be.a('string');
-                expect(result).to.include('/Users/rk/tlsnotary/src/auditee')
+                expect(result).to.include(tlsPath)
             })
     })
 });
