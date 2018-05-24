@@ -44,8 +44,16 @@ module.url_controller = function (req,res) {
 
                 callback.send_callback(result[2], data_dict.address, result[1], data_dict.ID, result[0])
             })
+            .then(() => {
+                res.json({
+                    message: "Process Completed"
+                })
+            })
             .catch(function (err) {
-                console.log("Something went wrong during execution :"+err)
+                console.log("Something went wrong during execution :"+err);
+                res.json({
+                    message: "Something went wrong during execution"
+                })
             });
     }
     else {
@@ -60,15 +68,18 @@ module.url_controller = function (req,res) {
                 var proof = "";
                 callback.send_callback(result[1], data_dict.address, result[0], data_dict.ID, proof)
             })
+            .then(() => {
+                res.json({
+                    message: "Process Completed"
+                })
+            })
             .catch(function (err) {
-                console.log("Something went wrong during execution :"+err)
+                console.log("Something went wrong during execution :"+err);
+                res.json({
+                    message: "Something went wrong during execution"
+                })
             });
     }
-
-    res.json({
-        message: "Process initiated"
-    })
-
 };
 
 
