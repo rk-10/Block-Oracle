@@ -31,7 +31,7 @@ queryevent.watch(function (error,result) {
                 'ID': id,
                 'address': developer_address,
                 'data': url_string,
-                'proof': 'true'
+                'proof': true
             };
             hitAPI(json)
         }
@@ -40,7 +40,7 @@ queryevent.watch(function (error,result) {
                 ID: id,
                 address: developer_address,
                 data: url_string,
-                proof: 'false'
+                proof: false
             };
             hitAPI(_json)
         }
@@ -53,7 +53,7 @@ queryevent.watch(function (error,result) {
 
 var hitAPI = function (json) {
     request({
-        url: 'http://13.250.34.192:3000/entry',
+        url: 'http://localhost:3000/entry',
         method: 'POST',
         json: true,
         body: json,

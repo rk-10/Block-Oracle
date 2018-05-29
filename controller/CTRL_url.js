@@ -30,7 +30,7 @@ module.url_controller = function (req,res) {
     console.log(url);
     var tlsnotaryurl = tlsnotary.get_tls_url(data_dict.data);
 
-    if(data_dict.proof.toLowerCase() === "true"){
+    if(data_dict.proof){
 
         Promise.all([
             proof_hash(tlsnotaryurl), //Notarization and uploading proof on ipfs: returns ipfs hash
@@ -98,4 +98,4 @@ var proof_hash = function (URL) {
                 return reject(error)
             })
     })
-};
+};e
